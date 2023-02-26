@@ -43,7 +43,7 @@ function App() {
   ], []);
 
   // destructuring useTable Hook
-  const { getTableProps, getTableBodyProps, headerGroups, getHeaderGroupProps, rows, prepareRow } = useTable({ columns, data });
+  const { getTableProps, getTableBodyProps, headerGroups, getHeaderGroupProps, rows, prepareRow, getRowProps, getCellProps } = useTable({ columns, data });
 
   return (
     <Fragment>
@@ -67,8 +67,27 @@ function App() {
                 </tr>
               ))}
             </thead>
-            <tbody>
-            
+            <tbody {...getTableBodyProps()}>
+              {// map through rows
+                rows.map((row) => {
+                  // prepare row
+                  prepareRow(row);
+
+                  return (
+                    <tr {...row.getRowProps()}>
+                    
+                      {// assign data to row cells as per table_dummy_data
+                        row.cells.map((cell) => (
+                        <td {...cell.getCellProps()}>
+                          {cell.render("Cell")}
+                        </td>
+                      ))}
+
+                    </tr>
+                  )
+              })
+                
+              }
             </tbody>
           </StyledTable>
         </div>

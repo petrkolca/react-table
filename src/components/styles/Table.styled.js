@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const StyledTable = styled.table`
-    width: 800px;
-    height: 800px;
+    width: 1200px;
+    /* height: 400px; */
     border-collapse: collapse;
     overflow: hidden;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);

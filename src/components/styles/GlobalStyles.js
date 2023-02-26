@@ -41,7 +41,7 @@ export const GlobalStyles = createGlobalStyle`
     // position: absolute;
     // top: 50%;
     // left: 50%;
-    background: white;
+    // background: white;
     max-height: 600px;
     overflow-y: scroll;
     // -webkit-transform: translate(-50%, -50%);
