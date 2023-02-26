@@ -43,15 +43,33 @@ function App() {
   ], []);
 
   // destructuring useTable Hook
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({ columns, data });
+  const { getTableProps, getTableBodyProps, headerGroups, getHeaderGroupProps, rows, prepareRow } = useTable({ columns, data });
 
   return (
     <Fragment>
       <GlobalStyles />
       <div className="App">
         <div className="container">
-          <StyledTable>
+          <StyledTable {...getTableProps()}>
+            <thead>
+              {// loop through headerGroups
+                headerGroups.map((headerGroup) => (
+                <tr {...headerGroup.getHeaderGroupProps()}>
+
+                  {// map through columns Array and create Header Columns
+                    headerGroup.headers.map((column) => (
+                    <th {// assign names to header Columns as per Array
+                      ...column.getHeaderProps()}>
+                      {column.render("Header")}
+                    </th>
+                  ))}
+
+                </tr>
+              ))}
+            </thead>
+            <tbody>
             
+            </tbody>
           </StyledTable>
         </div>
       </div>
