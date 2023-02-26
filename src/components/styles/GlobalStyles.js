@@ -17,6 +17,10 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-text-size-adjust: 100%;
   }
 
+  * {
+    box-sizing: border-box;
+  }
+
   a {
     font-weight: 500;
     color: #646cff;
@@ -30,22 +34,27 @@ export const GlobalStyles = createGlobalStyle`
     background: -webkit-linear-gradient(67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7%);
     background: linear-gradient(67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7%);
     margin: 0;
+    padding: 0;
+    min-width: 320px;
+  }
+  
+  .App {
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-    min-width: 320px;
-    min-height: 100vh;
+    padding: 3.5rem 2.5rem;
   }
-
+  
   .container {
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // background: white;
-    max-height: 600px;
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    flex: 1;
+    max-height: 500px;
     overflow-y: scroll;
-    // -webkit-transform: translate(-50%, -50%);
-    // transform: translate(-50%, -50%);
+    z-index: 1;
   }
 
   h1 {
