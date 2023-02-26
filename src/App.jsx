@@ -1,8 +1,9 @@
 import { Fragment, useMemo, useState } from 'react';
 import { useTable } from 'react-table';
-import { GlobalStyle } from './components/styles/global';
-
 import table_dummy_data from './utils/MOCK_DATA.json';
+
+import { GlobalStyles } from './components/styles/GlobalStyles';
+import { StyledTable } from './components/styles/Table.styled'
 
 function App() {
   const data = useMemo(() => table_dummy_data, []);
@@ -46,9 +47,13 @@ function App() {
 
   return (
     <Fragment>
-      <GlobalStyle />
+      <GlobalStyles />
       <div className="App">
-        <h1>React Table</h1>
+        <div className="container">
+          <StyledTable>
+            
+          </StyledTable>
+        </div>
       </div>
     </Fragment>
   )

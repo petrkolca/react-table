@@ -1,6 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
-export const GlobalStyle = createGlobalStyle`
+export const GlobalStyles = createGlobalStyle`
   :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -27,11 +27,25 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   body {
+    background: -webkit-linear-gradient(67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7%);
+    background: linear-gradient(67.2deg,  rgba(37,208,199,1) -7.5%, rgba(165,90,240,1) 62.7%);
     margin: 0;
     display: flex;
-    place-items: center;
+    align-items: center;
+    justify-content: center;
     min-width: 320px;
     min-height: 100vh;
+  }
+
+  .container {
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    background: white;
+    max-height: 600px;
+    overflow-y: scroll;
+    // -webkit-transform: translate(-50%, -50%);
+    // transform: translate(-50%, -50%);
   }
 
   h1 {
@@ -70,4 +84,4 @@ export const GlobalStyle = createGlobalStyle`
       background-color: #f9f9f9;
     }
   }
-`
+`;
